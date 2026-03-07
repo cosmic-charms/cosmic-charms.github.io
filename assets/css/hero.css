@@ -59,6 +59,13 @@
 	height: 500px;
 }
 
+@media (max-width: 640px) {
+.hero-logo .logo {
+	width: 300px;
+	height: 300px;
+}
+}
+
 .hero-cta {
 	text-align: left;
 }
