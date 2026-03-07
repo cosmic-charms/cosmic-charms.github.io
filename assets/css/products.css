@@ -1,0 +1,94 @@
+/* Products Section */
+.products {
+	padding: 4rem 2rem;
+	background: var(--purple-bg);
+	position: relative;
+}
+
+.carousel-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.carousel {
+	overflow: hidden;
+	border-radius: 12px;
+}
+
+.carousel-track {
+	display: flex;
+	transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+	min-width: 100%;
+	flex-shrink: 0;
+}
+
+.product-image {
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(135deg, var(--purple-light) 0%, var(--purple-medium) 100%);
+	border-radius: 12px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.product-image.placeholder {
+	background: linear-gradient(135deg, var(--purple-very-light) 0%, var(--purple-light) 100%);
+}
+
+.carousel-button {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: var(--purple-medium);
+	color: var(--white);
+	border: none;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	transition: background 0.3s;
+}
+
+.carousel-button:hover {
+	background: var(--purple-dark);
+}
+
+.carousel-prev {
+	left: -25px;
+}
+
+.carousel-next {
+	right: -25px;
+}
+
+.carousel-dots {
+	display: flex;
+	justify-content: center;
+	gap: 0.5rem;
+	margin-top: 2rem;
+}
+
+.dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: none;
+	background: var(--purple-light);
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+.dot.active {
+	background: var(--purple-medium);
+}
