@@ -5,16 +5,19 @@ A Jekyll-based website for Cosmic Charms Bakery, featuring a whimsical cosmic th
 ## Setup
 
 1. Install Ruby and Bundler (if not already installed):
+
    ```bash
    gem install bundler
    ```
 
 2. Install dependencies:
+
    ```bash
    bundle install
    ```
 
 3. Run the Jekyll server locally:
+
    ```bash
    bundle exec jekyll serve
    ```

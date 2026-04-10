@@ -19,7 +19,7 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-image: 
+	background-image:
 		radial-gradient(3px 3px at 25% 25%, var(--white), transparent),
 		radial-gradient(2px 2px at 75% 75%, var(--white), transparent),
 		radial-gradient(1px 1px at 50% 50%, var(--white), transparent);

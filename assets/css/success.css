@@ -22,7 +22,8 @@
 } */
 
 @keyframes pulse {
-	0%, 100% {
+	0%,
+	100% {
 		opacity: 0.3;
 		transform: translateX(-50%) scale(1);
 	}
@@ -42,7 +43,8 @@
 }
 
 @keyframes sparkle-icon {
-	0%, 100% {
+	0%,
+	100% {
 		transform: scale(1) rotate(0deg);
 		filter: drop-shadow(0 0 10px var(--gold));
 	}
@@ -189,7 +191,8 @@
 }
 
 @keyframes twinkle {
-	0%, 100% {
+	0%,
+	100% {
 		opacity: 0.3;
 		transform: scale(1);
 	}
