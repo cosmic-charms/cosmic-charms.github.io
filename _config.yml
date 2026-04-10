@@ -1,7 +1,7 @@
 title: Cosmic Charms Bakery
 description: Magical bakery specializing in enchanting, space-inspired treats
-url: https://cosmic-charms.github.io
-baseurl: ""
+url: https://cosmiccharms.org
+baseurl: ''
 
 # Build settings
 markdown: kramdown
@@ -11,9 +11,11 @@ plugins:
 
 # Site settings
 email: CosmicCharmsCreations@gmail.com
-phone: "(555) 123-4567"
-address: "Baltimore, MD"
+phone: '(443) 424-2767'
+phoneAlt: '(443) 4 CHARMS'
+address: 'Baltimore, MD'
 
 # Social media
 social:
-  instagram: "CosmicCharmsBakery"
+  instagram: 'CosmicCharmsBakery'
+  venmo: 'CosmicCharmsBakery'
