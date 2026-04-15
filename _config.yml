@@ -9,6 +9,12 @@ theme: minima
 plugins:
   - jekyll-feed
 
+# Sass: partials live in _sass/; each top-level .scss under assets/css/ with
+# front matter compiles to a matching .css file in the site output.
+sass:
+  sass_dir: _sass
+  style: compressed
+
 # Site settings
 email: CosmicCharmsCreations@gmail.com
 phone: '(443) 424-2767'

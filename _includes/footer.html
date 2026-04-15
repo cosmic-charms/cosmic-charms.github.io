@@ -1,78 +1,160 @@
 <footer class="site-footer">
-	<div class="footer-content">
-		<div class="footer-section footer-logo">
-			<img
-				class="logo"
-				src="/assets/images/logo-square.png"
-				alt="Cosmic Charms Bakery Logo"
-				class="logo-image"
-			/>
-		</div>
-
-		<div class="footer-section footer-newsletter">
-			<h3 class="footer-heading"><span class="star-icon">★</span> Join Our Newsletter</h3>
-			<p class="newsletter-text">Stay updated on our latest treats and offers!</p>
-			<script
-				async
-				src="https://subscribe-forms.beehiiv.com/embed.js"
-			></script>
-			<iframe
-				src="https://subscribe-forms.beehiiv.com/b8607b24-5a54-4db7-9775-34df9b73d095"
-				class="beehiiv-embed"
-				data-test-id="beehiiv-embed"
-				frameborder="0"
-				scrolling="no"
-				style="
-					width: 560px;
-					height: 252px;
-					margin: 0;
-					border-radius: 0px 0px 0px 0px !important;
-					background-color: transparent;
-					box-shadow: 0 0 #0000;
-					max-width: 100%;
-				"
-			></iframe>
-		</div>
-
-		<div class="footer-section footer-links">
-			<h3 class="footer-heading">Quick Links</h3>
-			<ul class="footer-list">
-				<li><a href="{{ '/' | relative_url }}">Home</a></li>
-				<!-- <li><a href="{{ '/about' | relative_url }}">About</a></li>
-				<li><a href="{{ '/menu' | relative_url }}">Menu</a></li>
-				<li><a href="{{ '/contact' | relative_url }}">Contact</a></li> -->
-			</ul>
-		</div>
-
-		<div class="footer-section footer-contact">
-			<h3 class="footer-heading">Contact Us</h3>
-			<ul class="footer-list">
-				<li><a href="tel:{{ site.phone }}">{{ site.phone }}</a></li>
-				<li><a href="tel:{{ site.phone }}">{{ site.phoneAlt }}</a></li>
-				<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-				<li>{{ site.address }}</li>
-			</ul>
-		</div>
-
-		<div class="footer-section footer-social">
-			<h3 class="footer-heading">Follow Us</h3>
-			<div class="social-icons">
+	<div class="site-footer__inner">
+		<div class="site-footer__grid">
+			<div class="site-footer__column site-footer__column--logo">
 				<a
-					href="https://www.instagram.com/{{ site.social.instagram }}"
-					class="social-icon"
-					aria-label="Instagram"
+					class="site-footer__logo-link"
+					href="{{ '/' | relative_url }}"
 				>
 					<img
-						class="social-icon-image"
-						src="/assets/images/instagram.svg"
-						alt="Instagram"
+						class="site-footer__logo"
+						src="{{ '/assets/images/logo.svg' | relative_url }}"
+						alt="{{ site.title }} logo"
+						decoding="async"
 					/>
 				</a>
 			</div>
-		</div>
-	</div>
 
-	<div class="footer-copyright">
-		<p>&copy; 2025 Cosmic Charms Bakery. All rights reserved.</p>
+			<div class="site-footer__column">
+				<h2 class="site-footer__heading">Quick Links</h2>
+				<ul class="site-footer__list">
+					<li>
+						<a href="{{ '/' | relative_url }}">Home</a>
+					</li>
+					<li>
+						<a href="{{ '/catering-events' | relative_url }}">Catering &amp; Events</a>
+					</li>
+					<li>
+						<a href="{{ '/order' | relative_url }}">Order Online</a>
+					</li>
+					<li>
+						<a href="{{ '/about' | relative_url }}">About</a>
+					</li>
+					<li>
+						<a href="{{ '/contact' | relative_url }}">Contact</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="site-footer__column">
+				<h2 class="site-footer__heading">Contact</h2>
+				<ul class="site-footer__list site-footer__list--contact">
+					<li>
+						<a href="mailto:{{ site.email }}">{{ site.email }}</a>
+					</li>
+					<li>
+						{% assign phone_clean = site.phone | replace: '(', '' | replace: ')', '' | replace: ' ', '' | replace: '-',
+						'' %}
+						<a href="tel:+1{{ phone_clean }}">{{ site.phone }}</a>
+					</li>
+					<li>
+						<a href="tel:+1{{ phone_clean }}">{{ site.phoneAlt }}</a>
+					</li>
+					<li>{{ site.address }}</li>
+				</ul>
+			</div>
+
+			<div class="site-footer__column">
+				<h2 class="site-footer__heading">Follow Us</h2>
+				<a
+					class="site-footer__social-link"
+					href="https://www.instagram.com/{{ site.social.instagram }}/"
+					aria-label="Instagram"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<span
+						class="site-footer__social-icon"
+						aria-hidden="true"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="22"
+							height="22"
+							viewBox="0 0 24 24"
+							fill="none"
+						>
+							<rect
+								x="2"
+								y="2"
+								width="20"
+								height="20"
+								rx="5"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							/>
+							<circle
+								cx="12"
+								cy="12"
+								r="4"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+							/>
+							<circle
+								cx="17.5"
+								cy="6.5"
+								r="1"
+								fill="currentColor"
+							/>
+						</svg>
+					</span>
+					<span class="site-footer__social-label">Instagram</span>
+				</a>
+			</div>
+
+			<div class="site-footer__column">
+				<h2 class="site-footer__heading">Subscribe to our Cosmic Newsletter</h2>
+				<form
+					class="newsletter-form site-footer__newsletter-form"
+					method="post"
+					action="#"
+				>
+					<div class="site-footer__newsletter-row">
+						<label
+							class="visually-hidden"
+							for="footer-newsletter-email"
+							>Email address</label
+						>
+						<input
+							id="footer-newsletter-email"
+							class="newsletter-input site-footer__newsletter-input"
+							type="email"
+							name="email"
+							autocomplete="email"
+							placeholder="Enter your email…"
+							required
+						/>
+						<button
+							class="site-footer__newsletter-submit"
+							type="submit"
+							aria-label="Subscribe to newsletter"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="20"
+								viewBox="0 0 24 24"
+								fill="none"
+								aria-hidden="true"
+							>
+								<path
+									d="M5 12h14M13 6l6 6-6 6"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="site-footer__bottom">
+			<p class="site-footer__copyright">&copy; 2026 {{ site.title }} Baltimore MD</p>
+		</div>
 	</div>
 </footer>
