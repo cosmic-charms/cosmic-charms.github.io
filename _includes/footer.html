@@ -30,9 +30,6 @@
 					<li>
 						<a href="{{ '/about' | relative_url }}">About</a>
 					</li>
-					<li>
-						<a href="{{ '/contact' | relative_url }}">Contact</a>
-					</li>
 				</ul>
 			</div>
 
@@ -40,121 +37,75 @@
 				<h2 class="site-footer__heading">Contact</h2>
 				<ul class="site-footer__list site-footer__list--contact">
 					<li>
-						<a href="mailto:{{ site.email }}">{{ site.email }}</a>
+						<a href="mailto:{{ site.email }}">Email Us</a>
 					</li>
 					<li>
-						{% assign phone_clean = site.phone | replace: '(', '' | replace: ')', '' | replace: ' ', '' | replace: '-',
-						'' %}
-						<a href="tel:+1{{ phone_clean }}">{{ site.phone }}</a>
+						<a href="tel:+1{{ site.phoneClean }}">{{ site.phone }}</a>
 					</li>
 					<li>
-						<a href="tel:+1{{ phone_clean }}">{{ site.phoneAlt }}</a>
+						<a href="tel:+1{{ site.phoneClean }}">{{ site.phoneAlt }}</a>
 					</li>
 					<li>{{ site.address }}</li>
 				</ul>
 			</div>
 
 			<div class="site-footer__column">
-				<h2 class="site-footer__heading">Follow Us</h2>
-				<a
-					class="site-footer__social-link"
-					href="https://www.instagram.com/{{ site.social.instagram }}/"
-					aria-label="Instagram"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<span
-						class="site-footer__social-icon"
-						aria-hidden="true"
+				<h2 class="site-footer__heading">Follow Our Journey</h2>
+				<div class="site-footer__list site-footer__social-links">
+					<a
+						class="site-footer__social-link"
+						href="https://www.instagram.com/{{ site.social.instagram }}/"
+						aria-label="Instagram"
+						target="_blank"
+						rel="noopener noreferrer"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="22"
-							height="22"
-							viewBox="0 0 24 24"
-							fill="none"
+						<span
+							class="site-footer__social-icon"
+							aria-hidden="true"
 						>
-							<rect
-								x="2"
-								y="2"
-								width="20"
-								height="20"
-								rx="5"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-							/>
-							<circle
-								cx="12"
-								cy="12"
-								r="4"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-							/>
-							<circle
-								cx="17.5"
-								cy="6.5"
-								r="1"
-								fill="currentColor"
-							/>
-						</svg>
-					</span>
-					<span class="site-footer__social-label">Instagram</span>
-				</a>
-			</div>
+							{% include images/instagram.svg %}
+						</span>
+						<span class="site-footer__social-label">via Instagram</span>
+					</a>
 
-			<div class="site-footer__column">
-				<h2 class="site-footer__heading">Subscribe to our Cosmic Newsletter</h2>
-				<form
-					class="newsletter-form site-footer__newsletter-form"
-					method="post"
-					action="#"
-				>
-					<div class="site-footer__newsletter-row">
-						<label
-							class="visually-hidden"
-							for="footer-newsletter-email"
-							>Email address</label
+					<span class="site-footer__social-link newsletter">
+						<span
+							class="site-footer__social-icon"
+							aria-hidden="true"
 						>
-						<input
-							id="footer-newsletter-email"
-							class="newsletter-input site-footer__newsletter-input"
-							type="email"
-							name="email"
-							autocomplete="email"
-							placeholder="Enter your email…"
-							required
-						/>
-						<button
-							class="site-footer__newsletter-submit"
-							type="submit"
-							aria-label="Subscribe to newsletter"
-						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="20"
-								height="20"
-								viewBox="0 0 24 24"
-								fill="none"
-								aria-hidden="true"
-							>
-								<path
-									d="M5 12h14M13 6l6 6-6 6"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-					</div>
-				</form>
+							{% include images/email.svg %}
+						</span>
+						<span class="site-footer__social-label">via Newsletter below</span>
+					</span>
+				</div>
 			</div>
 		</div>
 
+		<div class="newsletter-form site-footer__newsletter-form">
+			<script
+				async
+				src="https://subscribe-forms.beehiiv.com/embed.js"
+			></script>
+			<iframe
+				src="https://subscribe-forms.beehiiv.com/b8607b24-5a54-4db7-9775-34df9b73d095"
+				class="beehiiv-embed"
+				data-test-id="beehiiv-embed"
+				frameborder="0"
+				scrolling="no"
+				style="
+					width: 213px;
+					height: 92px;
+					margin: 0;
+					border-radius: 0px 0px 0px 0px !important;
+					background-color: transparent;
+					box-shadow: 0 0 #0000;
+					max-width: 100%;
+				"
+			></iframe>
+		</div>
+
 		<div class="site-footer__bottom">
-			<p class="site-footer__copyright">&copy; 2026 {{ site.title }} Baltimore MD</p>
+			<p class="site-footer__copyright">&copy; 2026 {{ site.title }}, Baltimore, MD</p>
 		</div>
 	</div>
 </footer>
