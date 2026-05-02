@@ -1,14 +1,14 @@
 <header class="site-header">
-	{% assign navigation_path = page.url | downcase %}
+	{% assign path = page.url | downcase %}
 	<nav
 		class="site-navigation"
-		aria-label="Primary"
+		aria-label="Primary Navigation"
 	>
 		<ul class="site-navigation__list">
 			<li>
 				<a
 					href="{{ '/' | relative_url }}"
-					class="site-navigation__link{% if navigation_path == '/' %} is-active{% endif %}"
+					class="site-navigation__link {% if path == '/' %}is-active{% endif %}"
 				>
 					<span class="site-navigation__link-text">Home</span>
 				</a>
@@ -16,7 +16,7 @@
 			<li>
 				<a
 					href="{{ '/catering-events/' | relative_url }}"
-					class="site-navigation__link{% if navigation_path == '/catering-events.html' %} is-active{% endif %}"
+					class="site-navigation__link {% if path == '/catering-events.html' %}is-active{% endif %}"
 				>
 					<span class="site-navigation__link-text">Catering &amp; Events</span>
 				</a>
@@ -24,25 +24,25 @@
 			<li>
 				<a
 					href="{{ '/order-online/' | relative_url }}"
-					class="site-navigation__link{% if navigation_path == '/order-online.html' %} is-active{% endif %}"
+					class="site-navigation__link {% if path == '/order-online.html' %}is-active{% endif %}"
 				>
 					<span class="site-navigation__link-text">Order Online</span>
 				</a>
 			</li>
 			<li>
 				<a
-					href="{{ '/about/' | relative_url }}"
-					class="site-navigation__link{% if navigation_path == '/about.html' %} is-active{% endif %}"
+					href="{{ '/contact/' | relative_url }}"
+					class="site-navigation__link {% if path == '/contact.html' %}is-active{% endif %}"
 				>
-					<span class="site-navigation__link-text">About</span>
+					<span class="site-navigation__link-text">Contact</span>
 				</a>
 			</li>
 			<li>
 				<a
-					href="{{ '/contact/' | relative_url }}"
-					class="site-navigation__link{% if navigation_path == '/contact.html' %} is-active{% endif %}"
+					href="{{ '/about/' | relative_url }}"
+					class="site-navigation__link {% if path == '/about.html' %}is-active{% endif %}"
 				>
-					<span class="site-navigation__link-text">Contact</span>
+					<span class="site-navigation__link-text">About</span>
 				</a>
 			</li>
 		</ul>

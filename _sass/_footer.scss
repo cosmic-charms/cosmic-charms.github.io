@@ -32,8 +32,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	aspect-ratio: 1;
 	border-radius: 50%;
 	background: white;
+	overflow: hidden;
 	transition: transform 0.2s ease;
 }
 
@@ -44,8 +46,6 @@
 .site-footer__logo {
 	width: 100%;
 	height: auto;
-	aspect-ratio: 1;
-	overflow: visible;
 }
 
 .site-footer__logo-background {
@@ -151,7 +151,7 @@
 
 .site-footer__bottom {
 	border-top: 1px solid rgba(255, 255, 255, 0.22);
-	padding: 1.84rem 2.4rem 2.8rem;
+	padding: 1.8rem 2.4rem 2.8rem;
 	text-align: center;
 }
 
