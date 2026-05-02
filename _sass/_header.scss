@@ -1,6 +1,27 @@
 .site-header {
 	padding: 0 clamp(1rem, 4vw, 2.5rem);
 	background: linear-gradient(165deg, var(--light-blue) 0%, white 48%, var(--light-blue) 100%);
+	position: relative;
+}
+
+// Checkbox must be a direct sibling before .site-navigation for :checked ~ selectors
+.site-navigation__toggle {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.site-navigation__bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
 }
 
 .site-navigation__list {
@@ -11,6 +32,8 @@
 	list-style: none;
 	margin: 0;
 	padding: 0;
+	flex: 1;
+	min-width: 0;
 }
 
 .site-navigation__link {
@@ -44,6 +67,118 @@
 	text-align: center;
 }
 
+// Narrowest view: hamburger + drawer hold Order Online, Contact, About
+.site-navigation__hamburger {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	flex-shrink: 0;
+	cursor: pointer;
+	padding: 0.65rem;
+	margin: 0;
+	border-radius: 4px;
+	transition: background-color 0.2s ease;
+}
+
+.site-navigation__hamburger:hover {
+	background-color: color-mix(in srgb, var(--light-blue) 65%, white);
+}
+
+.site-navigation__hamburger:focus-visible {
+	outline: 2px solid var(--medium-blue);
+	outline-offset: 2px;
+}
+
+.site-navigation__hamburger-line {
+	display: block;
+	width: 1.5rem;
+	height: 2px;
+	background: var(--navy-blue);
+	border-radius: 1px;
+	transition:
+		transform 0.3s ease,
+		opacity 0.25s ease;
+	transform-origin: center;
+}
+
+.site-navigation__hamburger-label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.site-navigation__drawer {
+	max-height: 0;
+	overflow: hidden;
+	visibility: hidden;
+	transition:
+		max-height 0.35s ease,
+		visibility 0s linear 0.35s;
+}
+
+.site-navigation__drawer-list {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 0.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+}
+
+.site-navigation__drawer-list .site-navigation__link {
+	padding: 0.85rem 1.3rem;
+}
+
+.site-navigation__item--order-online,
+.site-navigation__item--contact,
+.site-navigation__item--about {
+	display: none;
+}
+
+.site-navigation__drawer-item {
+	display: list-item;
+}
+
+// Open drawer when toggle is checked (only meaningful when hamburger is visible)
+#site-navigation-toggle:checked ~ .site-navigation .site-navigation__drawer {
+	max-height: 24rem;
+	visibility: visible;
+	transition-delay: 0s;
+}
+
+#site-navigation-toggle:checked ~ .site-navigation .site-navigation__hamburger-line:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+}
+
+#site-navigation-toggle:checked ~ .site-navigation .site-navigation__hamburger-line:nth-child(2) {
+	opacity: 0;
+	transform: scaleX(0);
+}
+
+#site-navigation-toggle:checked ~ .site-navigation .site-navigation__hamburger-line:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
+}
+
+// Order Online returns to the bar (drawer keeps Contact + About)
+@media (min-width: 457px) {
+	.site-navigation__item--order-online {
+		display: list-item;
+	}
+
+	.site-navigation__drawer-item--order-online {
+		display: none;
+	}
+}
+
 @media (min-width: 561px) {
 	.site-navigation__list {
 		gap: 1.2rem;
@@ -51,6 +186,37 @@
 
 	.site-navigation__link {
 		padding: 1.1rem 1.4rem;
+	}
+}
+
+// Contact returns to the bar (drawer keeps About only)
+@media (min-width: 576px) {
+	.site-navigation__item--contact {
+		display: list-item;
+	}
+
+	.site-navigation__drawer-item--contact {
+		display: none;
+	}
+}
+
+// Full horizontal nav: no hamburger; drawer stays closed even if toggle was left checked
+@media (min-width: 628px) {
+	.site-navigation__item--about {
+		display: list-item;
+	}
+
+	.site-navigation__drawer-item--about {
+		display: none;
+	}
+
+	.site-navigation__hamburger {
+		display: none;
+	}
+
+	.site-navigation__drawer {
+		max-height: 0 !important;
+		visibility: hidden !important;
 	}
 }
 
