@@ -1,20 +1,18 @@
+$header-padding: clamp(1rem, 4vw, 2.5rem);
+$header-background: linear-gradient(165deg, var(--light-blue) 0%, white 48%, var(--light-blue) 100%);
+
 .site-header {
-	padding: 0 clamp(1rem, 4vw, 2.5rem);
-	background: linear-gradient(165deg, var(--light-blue) 0%, white 48%, var(--light-blue) 100%);
-	position: relative;
+	height: 4.4rem;
 }
 
-// Checkbox must be a direct sibling before .site-navigation for :checked ~ selectors
-.site-navigation__toggle {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
+.site-navigation {
+	padding: 0 $header-padding;
+	background: $header-background;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
 }
 
 .site-navigation__bar {
@@ -117,6 +115,9 @@
 }
 
 .site-navigation__drawer {
+	position: fixed;
+	right: 0;
+	background: $header-background;
 	max-height: 0;
 	overflow: hidden;
 	visibility: hidden;
