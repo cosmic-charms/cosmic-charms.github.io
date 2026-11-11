@@ -1,9 +1,13 @@
 // Design tokens (imported first so other partials can use them)
 :root {
-	--navy-blue: rgb(26, 26, 96);
-	--medium-purple: rgb(95, 46, 139);
-	--teal: rgb(0, 87, 122);
-	--pink-purple: rgb(170, 63, 149);
-	--medium-blue: rgb(51, 127, 193);
-	--light-blue: rgb(194, 236, 249);
+	--navy-blue: rgb(26, 26, 96); // #1a1a60
+	--medium-purple: rgb(95, 46, 139); // #5f2e8b
+	--teal: rgb(0, 87, 122); // #00577a
+	--pink-purple: rgb(170, 63, 149); // #aa3f95
+	--medium-blue: rgb(51, 127, 193); // #337fc1
+	--light-blue: rgb(194, 236, 249); // #c2ecf9
 }
+
+// Use with @media (min-width: $tablet) { ... } and @media (min-width: $desktop) { ... }
+$tablet: 721px;
+$desktop: 1025px;
