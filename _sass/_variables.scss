@@ -7,7 +7,3 @@
 	--medium-blue: rgb(51, 127, 193); // #337fc1
 	--light-blue: rgb(194, 236, 249); // #c2ecf9
 }
-
-// Use with @media (min-width: $tablet) { ... } and @media (min-width: $desktop) { ... }
-$tablet: 721px;
-$desktop: 1025px;

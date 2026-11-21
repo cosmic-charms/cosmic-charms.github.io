@@ -15,4 +15,7 @@ export default defineConfig([
 		},
 	},
 	...baseConfig,
+	{
+		ignores: ['skills-lock.json'],
+	},
 ]);
