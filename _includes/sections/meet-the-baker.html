@@ -1,0 +1,46 @@
+<section class="section-soft section-spacing relative overflow-hidden">
+	<div class="pointer-events-none absolute top-0 left-0 h-28 w-40 celestial-surface opacity-50"></div>
+	<div class="pointer-events-none absolute top-0 right-0 h-28 w-40 celestial-surface opacity-40"></div>
+
+	<div
+		class="relative mx-auto grid max-w-[90rem] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.15fr_0.95fr] lg:gap-12 lg:px-10"
+	>
+		<div class="self-start">
+			<img
+				src="{{ '/assets/images/placeholders/baker-portrait.svg' | relative_url }}"
+				alt="Merlin Stardust, founder of Cosmic Charms Bakery"
+				class="aspect-[4/5] w-full rounded-[1.5rem] object-cover shadow-soft"
+				width="640"
+				height="800"
+			/>
+		</div>
+
+		<div class="max-w-xl">
+			<h2 class="font-display text-3xl leading-tight font-semibold text-navy-blue lg:text-4xl xl:text-[2.75rem]">
+				Meet the Baker Behind the Magic
+			</h2>
+			<p class="mt-5 text-base leading-relaxed text-navy-blue/80 lg:text-lg">Hi, I'm Merlin Stardust.</p>
+			<a
+				href="{{ '/about/' | relative_url }}"
+				class="link link-hover mt-6 inline-flex items-center gap-2 font-semibold text-primary-purple"
+			>
+				Read My Full Story {% include icons/arrow-right.html class='h-4 w-4' %}
+			</a>
+		</div>
+
+		<aside class="rounded-[1.5rem] bg-lavender/70 p-6 shadow-soft lg:p-7">
+			<ul class="divide-y divide-primary-purple/15">
+				{% for credential in site.data.credentials %}
+				<li class="flex items-center gap-4 py-4 first:pt-0 last:pb-0">
+					<span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary-purple text-white">
+						{% if credential.icon == 'graduation' %} {% include icons/graduation.html class='h-5 w-5' %} {% elsif
+						credential.icon == 'star' %} {% include icons/star.html class='h-5 w-5' %} {% else %} {% include
+						icons/location.html class='h-5 w-5' %} {% endif %}
+					</span>
+					<p class="font-body text-sm leading-snug font-semibold text-navy-blue lg:text-base">{{ credential.label }}</p>
+				</li>
+				{% endfor %}
+			</ul>
+		</aside>
+	</div>
+</section>
