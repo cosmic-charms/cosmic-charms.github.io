@@ -1,0 +1,39 @@
+title: Cosmic Charms Bakery
+email: hello@cosmiccharms.org
+description: >-
+  Whimsical celestial desserts for Baltimore's most memorable events.
+url: 'https://cosmiccharms.org'
+baseurl: ''
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .agents
+  - .github
+  - .husky
+  - .npmrc
+  - eslint.config.mjs
+  - prettier.config.mjs
+  - skills-lock.json
+  - specs
+  - mockup
+  - design
+  - README.md
+  - vendor
+  - .bundle
+  - assets/css/input.css
+
+include:
+  - CNAME
+
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default

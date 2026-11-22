@@ -15,16 +15,26 @@
 	"type": "commonjs",
 	"main": "index.html",
 	"scripts": {
-		"start": "bundle exec jekyll serve",
+		"css:build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --minify",
+		"css:watch": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch",
+		"jekyll:serve": "bundle exec jekyll serve --livereload --port 4000",
+		"jekyll:build": "bundle exec jekyll build",
+		"dev": "concurrently -k -n css,jekyll -c magenta,cyan \"npm run css:watch\" \"npm run jekyll:serve\"",
+		"start": "npm run dev",
+		"build": "npm run css:build && npm run jekyll:build",
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"lint": "eslint --fix . && prettier --write . && prettier --write .",
-		"lint:check": "eslint . && prettier .",
+		"lint": "eslint --fix . && prettier --write .",
+		"lint:check": "eslint . && prettier --check .",
 		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@cosmic-charms/infrastructure": "^1.5.1",
+		"@tailwindcss/cli": "^4.3.5",
+		"concurrently": "^9.2.5",
+		"daisyui": "^5.8.2",
 		"eslint": "^9.39.4",
 		"husky": "^9.1.7",
-		"prettier": "^3.8.1"
+		"prettier": "^3.8.1",
+		"tailwindcss": "^4.3.5"
 	}
 }

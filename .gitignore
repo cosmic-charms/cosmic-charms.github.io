@@ -3,5 +3,8 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
-.bundle/
-Gemfile.lock
+.bundle/*
+!.bundle/config
+node_modules/
+assets/css/main.css
+.DS_Store
