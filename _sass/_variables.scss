@@ -1,9 +1,24 @@
 // Design tokens (imported first so other partials can use them)
 :root {
-	--navy-blue: rgb(26, 26, 96); // #1a1a60
-	--medium-purple: rgb(95, 46, 139); // #5f2e8b
-	--teal: rgb(0, 87, 122); // #00577a
-	--pink-purple: rgb(170, 63, 149); // #aa3f95
-	--medium-blue: rgb(51, 127, 193); // #337fc1
-	--light-blue: rgb(194, 236, 249); // #c2ecf9
+	// dark blues and purples
+  --navy-blue: oklch(0.273 0.120 275);
+  --navy-blue-dark: oklch(0.273 0.107 281);
+  --primary-purple: oklch(0.388 0.117 286);
+  --secondary-purple: oklch(0.441 0.118 288);
+  --medium-purple: oklch(0.414 0.149 305);
+
+	// pink purples
+  --pink-purple: oklch(0.545 0.172 336);
+  --light-purple: oklch(0.724 0.088 295);
+
+	// lavenders and neutrals
+  --lavender: oklch(0.892 0.034 284);
+  --soft-lavender: oklch(0.930 0.022 297);
+  --off-white: oklch(0.984 0.004 301);
+  --white: oklch(1.000 0.000 90);
+
+	// blues and teals
+  --light-blue: oklch(0.918 0.047 219);
+  --medium-blue: oklch(0.581 0.126 248);
+  --teal: oklch(0.431 0.091 234);
 }
