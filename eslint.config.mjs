@@ -16,6 +16,6 @@ export default defineConfig([
 	},
 	...baseConfig,
 	{
-		ignores: ['_site/**', 'assets/css/main.css', 'skills-lock.json'],
+		ignores: ['_site/**', 'assets/css/main.css', 'skills-lock.json', 'vendor/**'],
 	},
 ]);

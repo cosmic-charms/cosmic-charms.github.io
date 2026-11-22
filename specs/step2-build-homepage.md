@@ -11,6 +11,7 @@ Do not change the established technology stack or unnecessarily modify the proje
 ## 1. Overall design
 
 Match the reference image's:
+
 - Section order and proportions.
 - Lavender, purple, and white color palette.
 - Serif headings and sans-serif body typography.
@@ -27,6 +28,7 @@ The website should feel like a professionally designed bakery and event catering
 Implement each section as a reusable Liquid include.
 
 ### Header
+
 - Circular Cosmic Charms logo.
 - Home, Catering & Events, Order Online, About, Contact navigation.
 - Shopping cart icon.
@@ -35,9 +37,11 @@ Implement each section as a reusable Liquid include.
 - Balanced horizontal desktop layout.
 
 ### Hero
+
 Two-column layout.
 
 Left:
+
 - "Unforgettable Dessert Experiences"
 - "for Baltimore's Most Memorable Events"
 - Description: "Where cosmic creativity meets flawless execution — custom dessert tables, wedding cakes, and branded treats designed to impress and delivered with precision."
@@ -45,34 +49,42 @@ Left:
 - Secondary CTA: Browse Menu
 
 Right:
+
 - Large photograph of an elaborate purple dessert table at an upscale event.
 - Baltimore skyline or elegant event setting.
 - Rounded corners.
 
 ### Meet the Baker
+
 Three-column layout.
 
 Left:
+
 - Baker portrait.
 
 Center:
+
 - "Meet the Baker Behind the Magic"
-- "Hi, I'm Jasmine Carter, founder of Cosmic Charms Bakery. With formal training from the Culinary Institute of America and over 8 years creating desserts for weddings, galas, and corporate events across Baltimore, I blend artistry with reliable execution so your event is as seamless as it is stunning."
+- "Hi, I'm Merlin Stardust."
 - Read My Full Story link.
 
 Right:
 Three credentials with icons:
+
 - Culinary Institute of America Graduate.
 - 8+ Years Event Experience.
 - Proudly Based in Baltimore, MD.
 
 ### Our Event Work
+
 Introductory content on the left:
+
 - "Our Event Work"
 - "From weddings to corporate galas, we design dessert experiences that leave a lasting impression."
 - View Full Portfolio button.
 
 Four portfolio cards:
+
 - Wedding Reception.
 - Corporate Gala.
 - Bridal Shower.
@@ -81,6 +93,7 @@ Four portfolio cards:
 Each card should have a large photograph and a dark purple caption area at the bottom.
 
 ### Testimonials
+
 Full-width dark purple section with a subtle galaxy background.
 
 Heading: "What Clients Are Saying"
@@ -97,13 +110,16 @@ Tara Bennett — Wedding Planner:
 "They're the easiest vendor to work with—creative, responsive, and unbelievably reliable. I recommend them to every couple I plan for."
 
 ### How It Works
+
 Two-column layout.
 
 Left:
+
 - "How It Works"
 - "A seamless process from first chat to final bite."
 
 Four numbered steps:
+
 1. Consultation — Tell us about your event, vision, and guest count.
 2. Design & Tasting — We create a custom concept and you taste the magic.
 3. Proposal — Receive a clear proposal with pricing and timeline.
@@ -113,29 +129,36 @@ Connect the steps using a dotted horizontal line.
 
 Right:
 Dark purple CTA card:
+
 - "Ready to Plan Your Event?"
 - "Let's create a dessert experience your guests will never forget."
 - Request a Custom Quote button.
 
 ### Latest Creations
+
 Create a horizontal gallery section.
 
 Left:
+
 - "See Our Latest Creations"
 - @cosmiccharmsbakery
 
 Center:
+
 - Six bakery photography thumbnails.
 
 Right:
+
 - Lavender CTA card.
 - "Looking for something sweet today?"
 - Order Online button.
 
 ### Footer
+
 Full-width deep purple galaxy background.
 
 Include:
+
 - Cosmic Charms logo.
 - Quick Links.
 - Contact information.
@@ -162,6 +185,7 @@ Use descriptive alt text.
 Use the design system established in Step 1.
 
 Use DaisyUI components where appropriate, especially for:
+
 - Buttons.
 - Cards.
 - Navigation.
@@ -180,6 +204,7 @@ Keep JavaScript minimal.
 The desktop homepage should closely resemble the reference image.
 
 Pay particular attention to:
+
 - Relative widths of columns.
 - Image dimensions and cropping.
 - Vertical spacing between sections.

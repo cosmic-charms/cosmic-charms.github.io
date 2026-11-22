@@ -7,6 +7,7 @@ Build a responsive, visually polished Jekyll website for Cosmic Charms Bakery, b
 The mockup is the primary visual reference. Recreate its overall appearance as closely as possible while making thoughtful adjustments for smaller screens.
 
 The website must:
+
 - Use Jekyll and Liquid templates.
 - Use Tailwind CSS for styling.
 - Use DaisyUI components where appropriate.
@@ -21,6 +22,7 @@ This is a static marketing website. Do not introduce React, Next.js, or other Ja
 First, inspect the existing repository.
 
 Determine:
+
 - Whether a Jekyll project already exists.
 - Whether Tailwind CSS and DaisyUI are already configured.
 - What build scripts and dependencies are available.
@@ -38,6 +40,7 @@ Recreate the visual style of the supplied mockup.
 ### Overall aesthetic
 
 The website should feel:
+
 - Whimsical and celestial.
 - Elegant and polished.
 - Magical without looking childish.
@@ -75,6 +78,7 @@ Headings should have a distinctive editorial appearance. Body text should remain
 ### Decorative styling
 
 Incorporate subtle celestial details throughout the design:
+
 - Stars and small sparkles.
 - Soft galaxy textures.
 - Nebula-inspired gradients.
@@ -102,6 +106,7 @@ Create a horizontal navigation bar with:
 - Instagram and Pinterest icons.
 
 Design:
+
 - Light lavender/white background.
 - Dark purple text.
 - Generous horizontal spacing.
@@ -109,6 +114,7 @@ Design:
 - Navigation should be horizontally centered or balanced between the logo and utility icons.
 
 On mobile:
+
 - Replace desktop navigation links with a hamburger menu.
 - Keep the logo visible.
 - Keep the cart accessible.
@@ -119,6 +125,7 @@ On mobile:
 Create a two-column hero section.
 
 Left column:
+
 - Large headline: "Unforgettable Dessert Experiences"
 - Supporting headline: "for Baltimore's Most Memorable Events"
 - Description: "Where cosmic creativity meets flawless execution — custom dessert tables, wedding cakes, and branded treats designed to impress and delivered with precision."
@@ -126,11 +133,13 @@ Left column:
 - Secondary CTA: "Browse Menu"
 
 Right column:
+
 - Large, visually dominant photograph of an elaborate purple dessert table at an upscale Baltimore event.
 - The image should include a city skyline or elegant event setting.
 - Use rounded corners and a polished presentation.
 
 Design:
+
 - Soft lavender and white background.
 - Celestial decorative elements.
 - Large serif typography.
@@ -138,6 +147,7 @@ Design:
 - Secondary outlined button.
 
 On mobile:
+
 - Stack the text and image vertically.
 - Keep the headline prominent.
 - Place buttons below the description.
@@ -148,15 +158,18 @@ On mobile:
 Create a three-column section.
 
 Left:
+
 - Large photograph of the baker in a professional bakery setting.
 
 Center:
+
 - Heading: "Meet the Baker Behind the Magic"
 - Introductory text:
-  "Hi, I'm Jasmine Carter, founder of Cosmic Charms Bakery. With formal training from the Culinary Institute of America and over 8 years creating desserts for weddings, galas, and corporate events across Baltimore, I blend artistry with reliable execution so your event is as seamless as it is stunning."
+  "Hi, I'm Merlin Stardust."
 - Text link: "Read My Full Story →"
 
 Right:
+
 - Three credential cards:
   1. Culinary Institute of America Graduate
   2. 8+ Years Event Experience
@@ -165,12 +178,14 @@ Right:
 Use graduation cap, star, and location icons.
 
 Design:
+
 - White or very light lavender background.
 - Rounded photograph.
 - Credentials displayed in a lightly tinted lavender card.
 - Purple icons and typography.
 
 On mobile:
+
 - Stack the photograph, introduction, and credentials.
 - Keep credentials readable without requiring horizontal scrolling.
 
@@ -186,18 +201,21 @@ Description:
 CTA: "View Full Portfolio →"
 
 Four portfolio cards:
+
 1. Wedding Reception
 2. Corporate Gala
 3. Bridal Shower
 4. Branded Corporate Treats
 
 Each card should contain:
+
 - A large photograph.
 - A dark purple caption overlay at the bottom.
 - White centered text.
 - Rounded corners.
 
 On mobile:
+
 - Use a two-column grid or a vertically stacked layout depending on available width.
 - Ensure images retain their proportions.
 
@@ -210,6 +228,7 @@ Heading: "What Clients Are Saying"
 Display three testimonials in a horizontal layout on desktop.
 
 Each testimonial includes:
+
 - Event photograph.
 - Quote.
 - Client name.
@@ -218,15 +237,16 @@ Each testimonial includes:
 Testimonials:
 
 1. Melissa & Jordan — Baltimore Wedding
-"Cosmic Charms completely transformed our wedding reception. The dessert table was the centerpiece of the night and everything tasted incredible!"
+   "Cosmic Charms completely transformed our wedding reception. The dessert table was the centerpiece of the night and everything tasted incredible!"
 
 2. Daniel Reeves — Corporate Events Manager
-"Flawless execution from start to finish. Everything arrived on time, branded perfectly, and our clients couldn't stop talking about it. We'll definitely be back."
+   "Flawless execution from start to finish. Everything arrived on time, branded perfectly, and our clients couldn't stop talking about it. We'll definitely be back."
 
 3. Tara Bennett — Wedding Planner
-"They're the easiest vendor to work with—creative, responsive, and unbelievably reliable. I recommend them to every couple I plan for."
+   "They're the easiest vendor to work with—creative, responsive, and unbelievably reliable. I recommend them to every couple I plan for."
 
 Design:
+
 - Deep purple galaxy background.
 - White serif heading.
 - White testimonial text.
@@ -234,6 +254,7 @@ Design:
 - Subtle decorative stars.
 
 On mobile:
+
 - Stack testimonials vertically or implement an accessible carousel.
 - Do not make testimonial text too small.
 
@@ -273,12 +294,14 @@ Description:
 Button: "Request a Custom Quote →"
 
 Design:
+
 - Light background.
 - Purple numbered circles.
 - Small celestial decorative elements.
 - Dark purple CTA card with subtle stars and rounded corners.
 
 On mobile:
+
 - Stack the process steps vertically.
 - Use a vertical connector instead of a horizontal line.
 - Place the CTA card underneath.
@@ -288,19 +311,23 @@ On mobile:
 Create a horizontal Instagram-style gallery.
 
 Left:
+
 - Heading: "See Our Latest Creations"
 - Instagram handle: @cosmiccharmsbakery
 
 Center:
+
 - Six square or portrait-oriented photographs of bakery creations.
 - Consistent spacing and rounded corners.
 
 Right:
+
 - Small lavender CTA card.
 - Text: "Looking for something sweet today?"
 - Button: "Order Online →"
 
 On mobile:
+
 - Allow the image gallery to scroll horizontally or wrap into a compact grid.
 - Keep the order CTA accessible.
 
@@ -340,6 +367,7 @@ Bottom copyright:
 "© 2024 Cosmic Charms Bakery · Baltimore, MD · Made with love & little stardust ✨"
 
 On mobile:
+
 - Stack footer columns.
 - Keep the logo visible.
 - Ensure newsletter input and button work with the available width.
@@ -361,6 +389,7 @@ The supplied mockup represents the desktop visual direction.
 Do not simply shrink the desktop design to fit mobile. Reorganize the content intelligently.
 
 Important responsive behaviors:
+
 - Desktop navigation becomes a mobile menu.
 - Multi-column sections stack vertically.
 - Portfolio cards adapt to available width.
@@ -379,9 +408,9 @@ Use Jekyll layouts, includes, and Liquid templates.
 
 Suggested structure:
 
-- _layouts/
+- \_layouts/
   - default.html
-- _includes/
+- \_includes/
   - header.html
   - footer.html
   - hero.html
@@ -390,7 +419,7 @@ Suggested structure:
   - testimonials.html
   - process.html
   - instagram-gallery.html
-- _config.yml
+- \_config.yml
 - index.html
 - assets/
   - css/
@@ -404,6 +433,7 @@ Keep content and presentation reasonably separated so text, links, and images ca
 ### Tailwind CSS and DaisyUI
 
 Use Tailwind CSS for:
+
 - Responsive layouts.
 - Spacing.
 - Typography.
@@ -412,6 +442,7 @@ Use Tailwind CSS for:
 - Custom colors and backgrounds.
 
 Use DaisyUI components where appropriate:
+
 - Navbar.
 - Buttons.
 - Cards.
@@ -428,6 +459,7 @@ Avoid forcing DaisyUI components where custom markup would produce a closer visu
 The website must deploy successfully using GitHub Pages.
 
 Important:
+
 - Use a compatible Jekyll build process.
 - Do not depend on unsupported GitHub Pages plugins.
 - If using additional Jekyll plugins, configure deployment through GitHub Actions.
@@ -440,6 +472,7 @@ Important:
 Keep JavaScript minimal.
 
 Use it only for functionality such as:
+
 - Mobile navigation.
 - Accessible dropdown interactions.
 - Optional image gallery interactions.
@@ -449,6 +482,7 @@ Do not introduce unnecessary dependencies.
 ## 6. Accessibility
 
 Follow accessibility best practices:
+
 - Semantic HTML.
 - Proper heading hierarchy.
 - Descriptive image alt text.
@@ -465,6 +499,7 @@ Use the supplied mockup as the visual reference for image selection and composit
 Organize images under assets/images/.
 
 Use descriptive filenames, for example:
+
 - logo.png
 - hero-dessert-table.jpg
 - baker-portrait.jpg
@@ -485,6 +520,7 @@ Make it easy to replace placeholder images with final photography.
 ## 8. Visual fidelity expectations
 
 Prioritize matching the supplied mockup in:
+
 - Section order.
 - Overall composition.
 - Background colors.
@@ -505,6 +541,7 @@ The finished website should look like a cohesive, professionally designed bakery
 Implement the website in logical stages.
 
 After implementation:
+
 1. Run the Jekyll build.
 2. Run the Tailwind CSS build.
 3. Resolve any build errors.
