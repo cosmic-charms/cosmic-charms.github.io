@@ -1,19 +1,39 @@
 title: Cosmic Charms Bakery
-description: Magical bakery specializing in enchanting, space-inspired treats
-url: https://cosmic-charms.github.io
-baseurl: ""
+email: hello@cosmiccharms.org
+description: >-
+  Whimsical celestial desserts for Baltimore's most memorable events.
+url: 'https://cosmiccharms.org'
+baseurl: ''
 
 # Build settings
 markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .agents
+  - .github
+  - .husky
+  - .npmrc
+  - eslint.config.mjs
+  - prettier.config.mjs
+  - skills-lock.json
+  - specs
+  - mockup
+  - design
+  - README.md
+  - vendor
+  - .bundle
+  - assets/css/input.css
 
-# Site settings
-email: CosmicCharmsCreations@gmail.com
-phone: "(555) 123-4567"
-address: "Baltimore, MD"
+include:
+  - CNAME
 
-# Social media
-social:
-  instagram: "CosmicCharmsBakery"
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default

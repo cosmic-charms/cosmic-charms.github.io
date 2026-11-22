@@ -1,0 +1,8 @@
+echo "Running eslint --fix"
+eslint $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g' | grep -E '(js|ts)') --fix --no-warn-ignored
+
+echo "Running prettier --write"
+prettier $(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g') --write --ignore-unknown
+
+echo "Adding changes to git"
+git update-index --again

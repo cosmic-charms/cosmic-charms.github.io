@@ -1,0 +1,15 @@
+- name: Melissa & Jordan
+  role: Baltimore Wedding
+  quote: Cosmic Charms completely transformed our wedding reception. The dessert table was the centerpiece of the night and everything tasted incredible!
+  image: /assets/images/placeholders/testimonial-melissa-jordan.svg
+  alt: Couple presenting a purple and white wedding cake at their Baltimore reception
+- name: Daniel Reeves
+  role: Corporate Events Manager
+  quote: Flawless execution from start to finish. Everything arrived on time, branded perfectly, and our clients couldn't stop talking about it. We'll definitely be back.
+  image: /assets/images/placeholders/testimonial-daniel-reeves.svg
+  alt: Branded corporate dessert table with cookies at a launch event
+- name: Tara Bennett
+  role: Wedding Planner
+  quote: They're the easiest vendor to work with—creative, responsive, and unbelievably reliable. I recommend them to every couple I plan for.
+  image: /assets/images/placeholders/testimonial-tara-bennett.svg
+  alt: Long table of purple-themed cookies and desserts for a wedding celebration

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800" role="img" aria-label="Baker portrait placeholder">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="oklch(0.32 0.12 283)"/>
+      <stop offset="55%" stop-color="oklch(0.42 0.14 303)"/>
+      <stop offset="100%" stop-color="oklch(0.55 0.16 338)"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="70%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="oklch(0.85 0.08 295 / 0.45)"/>
+      <stop offset="100%" stop-color="oklch(0.85 0.08 295 / 0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bg1)"/>
+  <rect width="640" height="800" fill="url(#glow1)"/>
+  <circle cx="115.19999999999999" cy="176" r="2" fill="oklch(1 0 90 / 0.9)"/>
+  <circle cx="460.79999999999995" cy="144" r="1.5" fill="oklch(1 0 90 / 0.75)"/>
+  <circle cx="537.6" cy="496" r="2" fill="oklch(0.92 0.04 219 / 0.85)"/>
+  <circle cx="179.20000000000002" cy="624" r="1.5" fill="oklch(1 0 90 / 0.7)"/>
+  <text x="50%" y="48%" text-anchor="middle" fill="oklch(0.98 0.01 301)" font-family="Georgia, serif" font-size="35.2" font-weight="600">Baker portrait</text>
+  <text x="50%" y="56%" text-anchor="middle" fill="oklch(0.89 0.03 284)" font-family="system-ui, sans-serif" font-size="22.400000000000002">Placeholder · Merlin Stardust</text>
+</svg>

@@ -1,0 +1,37 @@
+<section class="section-light section-spacing">
+	<div
+		class="mx-auto grid max-w-[90rem] items-start gap-10 px-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,2.15fr)] lg:gap-12 lg:px-10"
+	>
+		<div class="max-w-sm pt-2">
+			<h2 class="font-display text-3xl leading-tight font-semibold text-navy-blue lg:text-4xl">Our Event Work</h2>
+			<p class="mt-4 text-base leading-relaxed text-navy-blue/80 lg:text-lg">
+				From weddings to corporate galas, we design dessert experiences that leave a lasting impression.
+			</p>
+			<a
+				href="{{ '/catering/' | relative_url }}"
+				class="btn btn-primary mt-8 gap-2 px-6 shadow-glow"
+			>
+				View Full Portfolio {% include icons/arrow-right.html class='h-4 w-4' %}
+			</a>
+		</div>
+
+		<div class="grid grid-cols-2 gap-4 lg:grid-cols-4 lg:gap-5">
+			{% for item in site.data.portfolio %}
+			<article class="portfolio-card card bg-transparent shadow-soft">
+				<figure class="m-0">
+					<img
+						src="{{ item.image | relative_url }}"
+						alt="{{ item.alt }}"
+						class="aspect-[3/4] w-full object-cover"
+						width="480"
+						height="640"
+					/>
+				</figure>
+				<div class="bg-primary-purple px-3 py-3 text-center">
+					<h3 class="font-body text-sm font-semibold text-white lg:text-[0.95rem]">{{ item.title }}</h3>
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+	</div>
+</section>

@@ -2,6 +2,10 @@ _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.well-known/
 vendor/
-.bundle/
-Gemfile.lock
+.bundle/*
+!.bundle/config
+node_modules/
+assets/css/main.css
+.DS_Store

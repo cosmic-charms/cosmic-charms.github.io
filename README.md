@@ -1,63 +1,75 @@
-# Cosmic Charms Bakery Website
+# Cosmic Charms Bakery
 
-A Jekyll-based website for Cosmic Charms Bakery, featuring a whimsical cosmic theme with purple colors and starry backgrounds.
+Jekyll + Liquid + Tailwind CSS + DaisyUI website for Cosmic Charms Bakery, deployed to GitHub Pages.
 
-## Setup
+## Stack
 
-1. Install Ruby and Bundler (if not already installed):
-   ```bash
-   gem install bundler
-   ```
+- **Jekyll** — static site generation
+- **Liquid** — layouts and includes
+- **Tailwind CSS 4** — utility styling
+- **DaisyUI 5** — components and the custom `cosmic` theme
+- **GitHub Actions** — build CSS + Jekyll, then deploy to Pages
 
-2. Install dependencies:
-   ```bash
-   bundle install
-   ```
+GitHub Pages does not compile Tailwind. CSS is built with Node before Jekyll runs.
 
-3. Run the Jekyll server locally:
-   ```bash
-   bundle exec jekyll serve
-   ```
+## Prerequisites
 
-4. Visit `http://localhost:4000` in your browser
+- Ruby 3.1+ and Bundler
+- Node.js 20+
+- For private `@cosmic-charms` packages: `NODE_REGISTRY_TOKEN` in your environment (see `.npmrc`)
 
-## GitHub Pages Deployment
+## Install
 
-This site is configured to work with GitHub Pages. To deploy:
-
-1. Push this repository to GitHub
-2. Go to your repository settings
-3. Navigate to "Pages" in the sidebar
-4. Select the branch (usually `main` or `master`) and folder (`/ (root)`)
-5. GitHub Pages will automatically build and deploy your site
-
-The site will be available at `https://[username].github.io/cosmic-charms.github.io` or your custom domain if configured.
-
-## Project Structure
-
-```
-.
-├── _config.yml          # Jekyll configuration
-├── _includes/           # Reusable components (header, footer)
-├── _layouts/            # Page layouts
-├── assets/
-│   ├── css/            # Stylesheets
-│   └── js/             # JavaScript files
-├── index.html          # Homepage
-└── Gemfile             # Ruby dependencies
+```bash
+bundle install   # installs Ruby gems into ./vendor/bundle
+npm install
 ```
 
-## Customization
+## Development
 
-- Edit `_config.yml` to update site information, contact details, and social media links
-- Modify `assets/css/main.css` to change colors and styling
-- Update `index.html` to modify homepage content
-- Add new pages by creating HTML/Markdown files in the root directory
+Compile Tailwind in watch mode and serve Jekyll with live reload:
 
-## Features
+```bash
+npm start
+```
 
-- Responsive design
-- Product carousel with auto-play
-- Newsletter signup forms
-- Cosmic-themed styling with animated starry backgrounds
-- Mobile-friendly navigation
+Then open [http://127.0.0.1:4000](http://127.0.0.1:4000).
+
+Useful individual commands:
+
+```bash
+npm run css:watch      # Tailwind watch
+npm run css:build      # Minified Tailwind build
+npm run jekyll:serve   # Jekyll only (requires a prior CSS build)
+npm run jekyll:build   # Jekyll production build only
+```
+
+## Production build
+
+```bash
+npm run build
+```
+
+Output is written to `_site/`.
+
+## Design system
+
+- Custom DaisyUI theme: `cosmic` (`data-theme="cosmic"` on `<html>`)
+- Brand colors available as Tailwind utilities (`bg-navy-blue`, `text-lavender`, and so on)
+- Fonts: **Aptly** (headings) and **Quicksand** (body), loaded from `assets/fonts/`
+- Reusable utilities: `section-light`, `section-soft`, `section-dark`, `section-navy`, `section-spacing`, `celestial-surface`, `star-field`, `shadow-glow`, `shadow-soft`, `rounded-media`
+
+Visual references live in `mockup/` (see `design/README.md`).
+
+## Deploy
+
+Pushes to `main` run `.github/workflows/deploy.yml`:
+
+1. Install Ruby and Node dependencies
+2. Build Tailwind CSS
+3. Build Jekyll with `JEKYLL_ENV=production`
+4. Deploy `_site` to GitHub Pages
+
+Repository settings should use **GitHub Actions** as the Pages source. Keep the `NODE_REGISTRY_TOKEN` secret available for installing private npm packages.
+
+Custom domain: `cosmiccharms.org` (see `CNAME`). `baseurl` is empty for this organization Pages site.

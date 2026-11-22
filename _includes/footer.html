@@ -1,47 +1,126 @@
-<footer class="site-footer">
-	<div class="footer-content">
-		<div class="footer-section footer-logo">
-			<img class="logo" src="/assets/images/logo-square.png" alt="Cosmic Charms Bakery Logo" class="logo-image">
-		</div>
-		
-		<div class="footer-section footer-newsletter">
-			<h3 class="footer-heading">
-				<span class="star-icon">★</span> Join Our Newsletter
-			</h3>
-			<p class="newsletter-text">Stay updated on our latest treats and offers!</p>
-			<script async src="https://subscribe-forms.beehiiv.com/embed.js"></script><iframe src="https://subscribe-forms.beehiiv.com/b8607b24-5a54-4db7-9775-34df9b73d095" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 560px; height: 252px; margin: 0; border-radius: 0px 0px 0px 0px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;"></iframe>
-		</div>
-		
-		<div class="footer-section footer-links">
-			<h3 class="footer-heading">Quick Links</h3>
-			<ul class="footer-list">
-				<li><a href="{{ '/' | relative_url }}">Home</a></li>
-				<!-- <li><a href="{{ '/about' | relative_url }}">About</a></li>
-				<li><a href="{{ '/menu' | relative_url }}">Menu</a></li>
-				<li><a href="{{ '/contact' | relative_url }}">Contact</a></li> -->
-			</ul>
-		</div>
-		
-		<div class="footer-section footer-contact">
-			<h3 class="footer-heading">Contact Us</h3>
-			<ul class="footer-list">
-				<!-- <li>{{ site.phone }}</li> -->
-				<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-				<li>{{ site.address }}</li>
-			</ul>
-		</div>
-		
-		<div class="footer-section footer-social">
-			<h3 class="footer-heading">Follow Us</h3>
-			<div class="social-icons">
-				<a href="https://www.instagram.com/{{ site.social.instagram }}" class="social-icon" aria-label="Instagram">
-					<img class="social-icon-image" src="/assets/images/instagram.svg" alt="Instagram">
+<footer class="footer-section section-navy celestial-night text-lavender">
+	<div class="footer mx-auto max-w-[90rem] gap-10 px-6 py-14 sm:footer-horizontal lg:px-10 lg:py-16">
+		<aside class="max-w-xs">
+			<img
+				src="{{ '/assets/images/logo.jpg' | relative_url }}"
+				alt="{{ site.title }} logo"
+				class="h-28 w-28 rounded-full object-cover shadow-soft ring-4 ring-white/80"
+				width="112"
+				height="112"
+			/>
+		</aside>
+
+		<nav aria-label="Quick links">
+			<h2 class="footer-title font-display text-lg font-semibold tracking-wide text-white opacity-100">Quick Links</h2>
+			{% for item in site.data.navigation %}
+			<a
+				href="{{ item.path | relative_url }}"
+				class="link link-hover text-lavender/90"
+			>
+				{{ item.label }}
+			</a>
+			{% endfor %}
+		</nav>
+
+		<nav aria-label="Contact">
+			<h2 class="footer-title font-display text-lg font-semibold tracking-wide text-white opacity-100">Contact</h2>
+			<a
+				href="mailto:{{ site.data.contact.email }}"
+				class="link link-hover text-lavender/90"
+			>
+				{{ site.data.contact.email }}
+			</a>
+			<a
+				href="{{ site.data.contact.phone_href }}"
+				class="link link-hover text-lavender/90"
+			>
+				{{ site.data.contact.phone }}
+			</a>
+			<p class="text-lavender/90">{{ site.data.contact.location }}</p>
+		</nav>
+
+		<nav aria-label="Social media">
+			<h2 class="footer-title font-display text-lg font-semibold tracking-wide text-white opacity-100">Follow Us</h2>
+			<div class="mt-1 flex flex-wrap gap-3">
+				<a
+					href="{{ site.data.social.instagram }}"
+					class="btn btn-circle border-white/30 bg-white/10 text-white hover:bg-white/20"
+					aria-label="Instagram"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					{% include icons/instagram.html class='h-4 w-4' %}
+				</a>
+				<a
+					href="{{ site.data.social.facebook }}"
+					class="btn btn-circle border-white/30 bg-white/10 text-white hover:bg-white/20"
+					aria-label="Facebook"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					{% include icons/facebook.html class='h-4 w-4' %}
+				</a>
+				<a
+					href="{{ site.data.social.tiktok }}"
+					class="btn btn-circle border-white/30 bg-white/10 text-white hover:bg-white/20"
+					aria-label="TikTok"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					{% include icons/tiktok.html class='h-4 w-4' %}
+				</a>
+				<a
+					href="{{ site.data.social.pinterest }}"
+					class="btn btn-circle border-white/30 bg-white/10 text-white hover:bg-white/20"
+					aria-label="Pinterest"
+					rel="noopener noreferrer"
+					target="_blank"
+				>
+					{% include icons/pinterest.html class='h-4 w-4' %}
 				</a>
 			</div>
-		</div>
+		</nav>
+
+		<form
+			class="w-full max-w-xs"
+			action="#"
+			method="post"
+		>
+			<h2 class="footer-title font-display text-lg font-semibold tracking-wide text-white opacity-100">
+				Join the Cosmic Crew
+			</h2>
+			<p class="mb-4 text-sm leading-relaxed text-lavender/85">
+				Get updates on seasonal treats, events, and special offers!
+			</p>
+			<label
+				class="sr-only"
+				for="newsletter-email"
+			>
+				Email address
+			</label>
+			<div class="join w-full overflow-hidden rounded-full bg-lavender">
+				<input
+					id="newsletter-email"
+					type="email"
+					name="email"
+					placeholder="Enter your email.."
+					class="input join-item input-md grow border-0 bg-transparent text-navy-blue placeholder:text-navy-blue/50 focus:outline-none"
+					required
+				/>
+				<button
+					type="submit"
+					class="btn join-item btn-circle btn-primary m-1"
+					aria-label="Subscribe to newsletter"
+				>
+					{% include icons/arrow-right.html class='h-4 w-4' %}
+				</button>
+			</div>
+		</form>
 	</div>
-	
-	<div class="footer-copyright">
-		<p>&copy; 2025 Cosmic Charms Bakery. All rights reserved.</p>
+
+	<div class="border-t border-white/15 px-6 py-5 text-center lg:px-10">
+		<p class="text-sm text-lavender/80">
+			© 2024 Cosmic Charms Bakery · Baltimore, MD · Made with love & little stardust ✨
+		</p>
 	</div>
 </footer>

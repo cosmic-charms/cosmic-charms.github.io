@@ -1,30 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-	<link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/header.css' | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/hero.css' | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/products.css' | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/testimonials.css' | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/footer.css' | relative_url }}">
-	<link rel="stylesheet" href="{{ '/assets/css/responsive.css' | relative_url }}">
-	{% if page.title == 'Email Signup Success' %}
-	<link rel="stylesheet" href="{{ '/assets/css/success.css' | relative_url }}">
-	{% endif %}
-</head>
-<body>
-	{% include header.html %}
-	
-	<main>
-		{{ content }}
-	</main>
-	
-	{% include footer.html %}
-	
-	<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-</body>
+<!doctype html>
+<html
+	lang="en"
+	data-theme="cosmic"
+>
+	<head>
+		{% include head.html %}
+	</head>
+
+	<body class="bg-base-100 text-base-content min-h-screen antialiased">
+		{% include header.html %}
+
+		<main id="main-content">{{ content }}</main>
+
+		{% include footer.html %}
+
+		<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+	</body>
 </html>
