@@ -3,13 +3,13 @@
 	<div class="pointer-events-none absolute top-0 right-0 h-28 w-40 celestial-surface opacity-40"></div>
 
 	<div
-		class="relative mx-auto grid max-w-[90rem] items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.15fr_0.95fr] lg:gap-12 lg:px-10"
+		class="relative mx-auto grid max-w-360 items-center gap-10 px-6 lg:grid-cols-[0.9fr_1.15fr_0.95fr] lg:gap-12 lg:px-10"
 	>
 		<div class="self-start">
 			<img
 				src="{{ '/assets/images/placeholders/baker-portrait.svg' | relative_url }}"
 				alt="Merlin Stardust, founder of Cosmic Charms Bakery"
-				class="aspect-[4/5] w-full rounded-[1.5rem] object-cover shadow-soft"
+				class="aspect-4/5 w-full rounded-3xl object-cover shadow-soft"
 				width="640"
 				height="800"
 			/>
@@ -28,7 +28,7 @@
 			</a>
 		</div>
 
-		<aside class="rounded-[1.5rem] bg-lavender/70 p-6 shadow-soft lg:p-7">
+		<aside class="rounded-3xl bg-lavender/70 p-6 shadow-soft lg:p-7">
 			<ul class="divide-y divide-primary-purple/15">
 				{% for credential in site.data.credentials %}
 				<li class="flex items-center gap-4 py-4 first:pt-0 last:pb-0">
