@@ -1,0 +1,22 @@
+---
+import BakerSection from '../components/BakerSection.astro';
+import Hero from '../components/Hero.astro';
+import InstagramGallery from '../components/InstagramGallery.astro';
+import PortfolioSection from '../components/PortfolioSection.astro';
+import ProcessSection from '../components/ProcessSection.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+---
+
+<BaseLayout
+	title="Home"
+	description="Unforgettable dessert experiences for Baltimore's most memorable events."
+>
+	<Hero />
+	<BakerSection />
+	<PortfolioSection />
+	<TestimonialsSection />
+	<ProcessSection />
+	<InstagramGallery />
+</BaseLayout>

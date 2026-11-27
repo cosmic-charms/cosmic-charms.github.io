@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="720" viewBox="0 0 960 720" role="img" aria-label="Hero dessert table placeholder">
+  <defs>
+    <linearGradient id="bg0" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="oklch(0.32 0.12 275)"/>
+      <stop offset="55%" stop-color="oklch(0.42 0.14 295)"/>
+      <stop offset="100%" stop-color="oklch(0.55 0.16 330)"/>
+    </linearGradient>
+    <radialGradient id="glow0" cx="70%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="oklch(0.85 0.08 295 / 0.45)"/>
+      <stop offset="100%" stop-color="oklch(0.85 0.08 295 / 0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="960" height="720" fill="url(#bg0)"/>
+  <rect width="960" height="720" fill="url(#glow0)"/>
+  <circle cx="172.79999999999998" cy="158.4" r="2" fill="oklch(1 0 90 / 0.9)"/>
+  <circle cx="691.1999999999999" cy="129.6" r="1.5" fill="oklch(1 0 90 / 0.75)"/>
+  <circle cx="806.4" cy="446.4" r="2" fill="oklch(0.92 0.04 219 / 0.85)"/>
+  <circle cx="268.8" cy="561.6" r="1.5" fill="oklch(1 0 90 / 0.7)"/>
+  <text x="50%" y="48%" text-anchor="middle" fill="oklch(0.98 0.01 301)" font-family="Georgia, serif" font-size="39.6" font-weight="600">Hero dessert table</text>
+  <text x="50%" y="56%" text-anchor="middle" fill="oklch(0.89 0.03 284)" font-family="system-ui, sans-serif" font-size="25.200000000000003">Placeholder · Baltimore event setting</text>
+</svg>

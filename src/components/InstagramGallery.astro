@@ -1,0 +1,62 @@
+---
+import { gallery } from '../data/gallery';
+import { social } from '../data/social';
+import ArrowRight from './icons/ArrowRight.astro';
+---
+
+<section class="section-light section-spacing">
+	<div
+		class="mx-auto flex max-w-[90rem] flex-col items-center gap-8 px-6 lg:flex-row lg:items-center lg:gap-6 lg:px-10 xl:gap-8"
+	>
+		<div class="w-full shrink-0 lg:w-48 xl:w-56">
+			<h2 class="font-display text-2xl leading-tight font-semibold text-navy-blue lg:text-[1.65rem]">
+				See Our Latest Creations
+			</h2>
+			<a
+				href={social.instagram}
+				class="link link-hover mt-2 inline-block text-sm font-medium text-secondary-purple"
+				rel="noopener noreferrer"
+				target="_blank"
+			>
+				@cosmiccharmsbakery
+			</a>
+		</div>
+
+		<div class="grid w-full grid-cols-3 gap-3 sm:grid-cols-6 lg:flex-1 lg:gap-3 xl:gap-4">
+			{
+				gallery.map((item) => (
+					<a
+						href={social.instagram}
+						class="block overflow-hidden rounded-2xl shadow-soft transition hover:opacity-90"
+						rel="noopener noreferrer"
+						target="_blank"
+						aria-label={item.alt}
+					>
+						<img
+							src={item.image}
+							alt={item.alt}
+							class="aspect-square w-full object-cover"
+							width="320"
+							height="320"
+							loading="lazy"
+						/>
+					</a>
+				))
+			}
+		</div>
+
+		<aside class="card w-full shrink-0 bg-lavender/80 shadow-soft lg:w-56 xl:w-64">
+			<div class="card-body items-start gap-5 p-6">
+				<h3 class="card-title font-display text-xl leading-snug font-semibold text-navy-blue">
+					Looking for something sweet today?
+				</h3>
+				<a
+					href="/order/"
+					class="btn btn-primary gap-2 px-5 shadow-glow"
+				>
+					Order Online <ArrowRight class="h-4 w-4" />
+				</a>
+			</div>
+		</aside>
+	</div>
+</section>

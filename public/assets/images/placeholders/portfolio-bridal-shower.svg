@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 480 640" role="img" aria-label="Bridal Shower placeholder">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="oklch(0.32 0.12 307)"/>
+      <stop offset="55%" stop-color="oklch(0.42 0.14 327)"/>
+      <stop offset="100%" stop-color="oklch(0.55 0.16 362)"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="70%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="oklch(0.85 0.08 295 / 0.45)"/>
+      <stop offset="100%" stop-color="oklch(0.85 0.08 295 / 0)"/>
+    </radialGradient>
+  </defs>
+  <rect width="480" height="640" fill="url(#bg4)"/>
+  <rect width="480" height="640" fill="url(#glow4)"/>
+  <circle cx="86.39999999999999" cy="140.8" r="2" fill="oklch(1 0 90 / 0.9)"/>
+  <circle cx="345.59999999999997" cy="115.19999999999999" r="1.5" fill="oklch(1 0 90 / 0.75)"/>
+  <circle cx="403.2" cy="396.8" r="2" fill="oklch(0.92 0.04 219 / 0.85)"/>
+  <circle cx="134.4" cy="499.20000000000005" r="1.5" fill="oklch(1 0 90 / 0.7)"/>
+  <text x="50%" y="48%" text-anchor="middle" fill="oklch(0.98 0.01 301)" font-family="Georgia, serif" font-size="26.4" font-weight="600">Bridal Shower</text>
+  <text x="50%" y="56%" text-anchor="middle" fill="oklch(0.89 0.03 284)" font-family="system-ui, sans-serif" font-size="16.8">Portfolio placeholder</text>
+</svg>

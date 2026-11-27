@@ -3,7 +3,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main
+      - astro
   workflow_dispatch:
 
 permissions:
@@ -18,43 +18,11 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
-          bundler-cache: true
-
-      - name: Set up Node
-        uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-          cache: npm
-          registry-url: https://npm.pkg.github.com
-          scope: '@cosmic-charms'
-
-      - name: Install JavaScript dependencies
-        env:
-          NODE_REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HUSKY: '0'
-        run: npm ci
-
-      - name: Build Tailwind CSS
-        run: npm run css:build
-
-      - name: Build Jekyll
-        env:
-          JEKYLL_ENV: production
-        run: bundle exec jekyll build
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: _site
+    uses: ./.github/workflows/astro-build.yml
+    secrets: inherit
+    with:
+      upload_preview_artifact: false
+      upload_pages_artifact: true
 
   deploy:
     needs: build

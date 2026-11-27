@@ -9,3 +9,6 @@ vendor/
 node_modules/
 assets/css/main.css
 .DS_Store
+dist/
+.astro/
+.tmp/
