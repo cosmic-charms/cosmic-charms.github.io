@@ -1,6 +1,7 @@
 name: Astro Build
 
 on:
+  pull_request:
   workflow_call:
     inputs:
       upload_preview_artifact:

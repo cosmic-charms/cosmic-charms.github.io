@@ -3,7 +3,27 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - astro
+      - main
+    paths-ignore:
+      # CI/CD & GitHub metadata
+      - '.github/**'
+
+      # Documentation
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE'
+      
+      # Tests & test fixtures
+      - 'tests/**'
+      - '__tests__/**'
+      - '**/*.test.*'
+      - '**/*.spec.*'
+      
+      # Local dev, editor, and linter configs
+      - '.gitignore'
+      - '.editorconfig'
+      - '.prettierrc*'
+      - '.eslintrc*'
   workflow_dispatch:
 
 permissions:
@@ -18,7 +38,7 @@ concurrency:
 
 jobs:
   build:
-    uses: ./.github/workflows/astro-build.yml
+    uses: ./.github/workflows/build.yml
     secrets: inherit
     with:
       upload_preview_artifact: false

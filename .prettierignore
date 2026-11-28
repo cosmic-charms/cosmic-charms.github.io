@@ -1,5 +1,6 @@
 .astro
 .agents
+.github/workflows
 dist
 node_modules
 package-lock.json
