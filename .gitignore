@@ -1,6 +1,4 @@
-node_modules/
-.DS_Store
-dist/
 .astro/
-.tmp/
-.well-known/
+.DS_Store
+node_modules/
+dist/
