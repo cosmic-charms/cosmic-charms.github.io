@@ -1,21 +1,18 @@
 # Cosmic Charms Bakery
 
-Astro + Tailwind CSS + DaisyUI website for Cosmic Charms Bakery, deployed to GitHub Pages from the `astro` branch.
-
-The previous Jekyll implementation remains in the repository as a reference.
+Astro + Tailwind CSS + DaisyUI website for Cosmic Charms Bakery, deployed to GitHub Pages.
 
 ## Stack
 
 - **Astro** — static site generation and components
 - **Tailwind CSS 4** — utility styling via `@tailwindcss/vite`
 - **DaisyUI 5** — components and the custom `cosmic` theme
-- **GitHub Actions** — build, preview artifact, and Pages deploy from `astro`
+- **GitHub Actions** — build, preview artifact, and Pages deploy from the `astro` branch
 
 ## Prerequisites
 
 - Node.js 20+
 - For private `@cosmic-charms` packages: `NODE_REGISTRY_TOKEN` in your environment (see `.npmrc`)
-- Optional (Jekyll reference): Ruby 3.1+ and Bundler
 
 ## Install
 
@@ -39,6 +36,12 @@ npm run build   # writes dist/
 npm run preview # serve dist locally
 ```
 
+## Lint
+
+```bash
+npm run lint:check
+```
+
 ## GitHub Actions
 
 | Workflow            | Trigger                    | Purpose                                      |
@@ -49,27 +52,18 @@ npm run preview # serve dist locally
 
 Custom domain: `cosmiccharms.org` (`public/CNAME`). Site root has no project subpath.
 
-### GitHub Pages settings (manual)
+### GitHub Pages settings
 
 1. Repository **Settings → Pages**
 2. Set **Source** to **GitHub Actions**
-3. Confirm the custom domain is `cosmiccharms.org` (and DNS still points at GitHub Pages)
+3. Confirm the custom domain is `cosmiccharms.org`
 4. Push the `astro` branch (or run **Deploy GitHub Pages** via workflow_dispatch)
 
 ### Preview artifact
 
 1. Open the **Astro Preview** workflow run on GitHub Actions
 2. Download the `astro-site-preview` artifact
-3. Unzip and open `index.html` with a local static server (for example `npx serve .`)
-
-## Jekyll reference
-
-```bash
-bundle install
-npm run jekyll:dev
-```
-
-Jekyll is no longer deployed from `main`.
+3. Unzip and serve locally (for example `npx serve .`)
 
 ## Design system
 

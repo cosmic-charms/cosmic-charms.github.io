@@ -1,8 +1,6 @@
-_site
-dist
 .astro
-assets/css/main.css
+.agents
+dist
 node_modules
 package-lock.json
-Gemfile.lock
-.agents
+specs

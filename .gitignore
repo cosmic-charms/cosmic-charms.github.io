@@ -1,14 +1,4 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-.well-known/
-vendor/
-.bundle/*
-!.bundle/config
-node_modules/
-assets/css/main.css
-.DS_Store
-dist/
 .astro/
-.tmp/
+.DS_Store
+node_modules/
+dist/
