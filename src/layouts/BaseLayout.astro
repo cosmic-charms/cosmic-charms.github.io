@@ -1,0 +1,105 @@
+---
+import { site } from '../data/site';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import MobileNav from '../components/MobileNav.astro';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { title, description = site.description } = Astro.props;
+const pageTitle = title ? `${title} | ${site.title}` : site.title;
+---
+
+<!doctype html>
+<html
+	lang="en"
+	data-theme="cosmic"
+>
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<meta
+			name="description"
+			content={description}
+		/>
+		<meta
+			name="robots"
+			content="index, follow, noai, noimageai"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>{pageTitle}</title>
+
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/assets/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/assets/favicon/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="/assets/favicon/site.webmanifest"
+		/>
+	</head>
+
+	<body class="bg-base-100 text-base-content min-h-screen antialiased">
+		<div class="drawer">
+			<input
+				id="mobile-nav"
+				type="checkbox"
+				class="drawer-toggle"
+			/>
+			<div class="drawer-content flex min-h-screen flex-col">
+				<a
+					href="#main-content"
+					class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-content"
+				>
+					Skip to main content
+				</a>
+				<Header />
+				<main
+					id="main-content"
+					class="grow"
+				>
+					<slot />
+				</main>
+				<Footer />
+			</div>
+			<MobileNav />
+		</div>
+
+		<script>
+			document.documentElement.classList.add('js-enabled');
+
+			const toggle = document.getElementById('mobile-nav');
+
+			if (toggle instanceof HTMLInputElement) {
+				document.addEventListener('keydown', (event) => {
+					if (event.key === 'Escape' && toggle.checked) {
+						toggle.checked = false;
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

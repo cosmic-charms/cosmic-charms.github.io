@@ -1,0 +1,28 @@
+name: Astro Preview
+
+on:
+  push:
+    branches:
+      - astro
+  pull_request:
+    branches:
+      - astro
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: astro-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    uses: ./.github/workflows/astro-build.yml
+    secrets: inherit
+    with:
+      upload_preview_artifact: true
+      upload_pages_artifact: false

@@ -1,0 +1,71 @@
+name: Astro Build
+
+on:
+  workflow_call:
+    inputs:
+      upload_preview_artifact:
+        description: Upload dist/ as a downloadable preview artifact
+        type: boolean
+        default: false
+      upload_pages_artifact:
+        description: Upload dist/ as a GitHub Pages artifact
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  packages: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          registry-url: https://npm.pkg.github.com
+          scope: '@cosmic-charms'
+
+      - name: Install JavaScript dependencies
+        env:
+          NODE_REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HUSKY: '0'
+        run: npm ci
+
+      - name: Validate Astro project
+        run: npm run check
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Confirm static output
+        run: |
+          test -f dist/index.html
+          test -f dist/CNAME
+          test -f dist/.nojekyll
+          test -d dist/assets
+          test -d dist/assets/fonts
+          test -d dist/assets/images
+          test -d dist/_astro
+          echo "Astro static build succeeded."
+
+      - name: Upload preview artifact
+        if: inputs.upload_preview_artifact
+        uses: actions/upload-artifact@v5
+        with:
+          name: astro-site-preview
+          path: dist
+          if-no-files-found: error
+
+      - name: Upload Pages artifact
+        if: inputs.upload_pages_artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist

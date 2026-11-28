@@ -28,6 +28,12 @@ exclude:
   - vendor
   - .bundle
   - assets/css/input.css
+  - src
+  - public
+  - dist
+  - .astro
+  - astro.config.mjs
+  - tsconfig.json
 
 include:
   - CNAME

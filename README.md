@@ -1,75 +1,81 @@
 # Cosmic Charms Bakery
 
-Jekyll + Liquid + Tailwind CSS + DaisyUI website for Cosmic Charms Bakery, deployed to GitHub Pages.
+Astro + Tailwind CSS + DaisyUI website for Cosmic Charms Bakery, deployed to GitHub Pages from the `astro` branch.
+
+The previous Jekyll implementation remains in the repository as a reference.
 
 ## Stack
 
-- **Jekyll** — static site generation
-- **Liquid** — layouts and includes
-- **Tailwind CSS 4** — utility styling
+- **Astro** — static site generation and components
+- **Tailwind CSS 4** — utility styling via `@tailwindcss/vite`
 - **DaisyUI 5** — components and the custom `cosmic` theme
-- **GitHub Actions** — build CSS + Jekyll, then deploy to Pages
-
-GitHub Pages does not compile Tailwind. CSS is built with Node before Jekyll runs.
+- **GitHub Actions** — build, preview artifact, and Pages deploy from `astro`
 
 ## Prerequisites
 
-- Ruby 3.1+ and Bundler
 - Node.js 20+
 - For private `@cosmic-charms` packages: `NODE_REGISTRY_TOKEN` in your environment (see `.npmrc`)
+- Optional (Jekyll reference): Ruby 3.1+ and Bundler
 
 ## Install
 
 ```bash
-bundle install   # installs Ruby gems into ./vendor/bundle
 npm install
 ```
 
 ## Development
 
-Compile Tailwind in watch mode and serve Jekyll with live reload:
-
 ```bash
 npm start
 ```
 
-Then open [http://127.0.0.1:4000](http://127.0.0.1:4000).
-
-Useful individual commands:
-
-```bash
-npm run css:watch      # Tailwind watch
-npm run css:build      # Minified Tailwind build
-npm run jekyll:serve   # Jekyll only (requires a prior CSS build)
-npm run jekyll:build   # Jekyll production build only
-```
+Then open [http://127.0.0.1:4321](http://127.0.0.1:4321).
 
 ## Production build
 
 ```bash
-npm run build
+npm run check   # Astro validation
+npm run build   # writes dist/
+npm run preview # serve dist locally
 ```
 
-Output is written to `_site/`.
+## GitHub Actions
+
+| Workflow            | Trigger                    | Purpose                                      |
+| ------------------- | -------------------------- | -------------------------------------------- |
+| `astro-preview.yml` | push/PR to `astro`, manual | Build + upload `astro-site-preview` artifact |
+| `deploy.yml`        | push to `astro`, manual    | Build + deploy `dist/` to GitHub Pages       |
+| `astro-build.yml`   | reusable                   | Shared install, check, build, and uploads    |
+
+Custom domain: `cosmiccharms.org` (`public/CNAME`). Site root has no project subpath.
+
+### GitHub Pages settings (manual)
+
+1. Repository **Settings → Pages**
+2. Set **Source** to **GitHub Actions**
+3. Confirm the custom domain is `cosmiccharms.org` (and DNS still points at GitHub Pages)
+4. Push the `astro` branch (or run **Deploy GitHub Pages** via workflow_dispatch)
+
+### Preview artifact
+
+1. Open the **Astro Preview** workflow run on GitHub Actions
+2. Download the `astro-site-preview` artifact
+3. Unzip and open `index.html` with a local static server (for example `npx serve .`)
+
+## Jekyll reference
+
+```bash
+bundle install
+npm run jekyll:dev
+```
+
+Jekyll is no longer deployed from `main`.
 
 ## Design system
 
 - Custom DaisyUI theme: `cosmic` (`data-theme="cosmic"` on `<html>`)
 - Brand colors available as Tailwind utilities (`bg-navy-blue`, `text-lavender`, and so on)
-- Fonts: **Aptly** (headings) and **Quicksand** (body), loaded from `assets/fonts/`
+- Fonts: **Aptly** (headings) and **Quicksand** (body), loaded from `public/assets/fonts/`
 - Reusable utilities: `section-light`, `section-soft`, `section-dark`, `section-navy`, `section-spacing`, `celestial-surface`, `star-field`, `shadow-glow`, `shadow-soft`, `rounded-media`
 
 Visual references live in `mockup/` (see `design/README.md`).
-
-## Deploy
-
-Pushes to `main` run `.github/workflows/deploy.yml`:
-
-1. Install Ruby and Node dependencies
-2. Build Tailwind CSS
-3. Build Jekyll with `JEKYLL_ENV=production`
-4. Deploy `_site` to GitHub Pages
-
-Repository settings should use **GitHub Actions** as the Pages source. Keep the `NODE_REGISTRY_TOKEN` secret available for installing private npm packages.
-
-Custom domain: `cosmiccharms.org` (see `CNAME`). `baseurl` is empty for this organization Pages site.

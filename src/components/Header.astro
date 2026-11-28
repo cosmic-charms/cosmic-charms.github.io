@@ -1,0 +1,96 @@
+---
+import { navigation } from '../data/navigation';
+import { site } from '../data/site';
+import { social } from '../data/social';
+import Cart from './icons/Cart.astro';
+import Instagram from './icons/Instagram.astro';
+import Menu from './icons/Menu.astro';
+import Pinterest from './icons/Pinterest.astro';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header border-b border-lavender/60 bg-base-100/95 text-base-content backdrop-blur-sm">
+	<div class="navbar mx-auto max-w-360 px-6 lg:px-10">
+		<div class="navbar-start gap-2">
+			<label
+				for="mobile-nav"
+				class="btn btn-ghost btn-circle drawer-button lg:hidden"
+				aria-label="Open navigation menu"
+			>
+				<Menu />
+			</label>
+			<a
+				href="/"
+				class="shrink-0"
+			>
+				<img
+					src="/assets/images/logo.jpg"
+					alt={`${site.title} logo`}
+					class="h-16 w-16 rounded-full object-cover shadow-soft ring-2 ring-lavender/80 lg:h-18 lg:w-18"
+					width="72"
+					height="72"
+				/>
+			</a>
+		</div>
+
+		<nav
+			class="navbar-center hidden lg:flex"
+			aria-label="Primary"
+		>
+			<ul class="menu menu-horizontal gap-1 px-1">
+				{
+					navigation.map((item) => {
+						const isHome = item.path === '/' && (currentPath === '/' || currentPath === '');
+						const isCurrent = isHome || (item.path !== '/' && currentPath.startsWith(item.path));
+
+						return (
+							<li>
+								<a
+									href={item.path}
+									class:list={[
+										'font-display rounded-full px-4 py-2 text-[0.95rem] font-medium tracking-wide text-navy-blue transition',
+										isCurrent
+											? 'bg-soft-lavender text-primary-purple'
+											: 'hover:bg-soft-lavender hover:text-primary-purple',
+									]}
+									aria-current={isCurrent ? 'page' : undefined}
+								>
+									{item.label}
+								</a>
+							</li>
+						);
+					})
+				}
+			</ul>
+		</nav>
+
+		<div class="navbar-end gap-0.5 text-navy-blue">
+			<a
+				href={social.cart}
+				class="btn btn-ghost btn-circle"
+				aria-label="Shopping cart"
+			>
+				<Cart />
+			</a>
+			<a
+				href={social.instagram}
+				class="btn btn-ghost btn-circle hidden sm:inline-flex"
+				aria-label="Instagram"
+				rel="noopener noreferrer"
+				target="_blank"
+			>
+				<Instagram />
+			</a>
+			<a
+				href={social.pinterest}
+				class="btn btn-ghost btn-circle hidden sm:inline-flex"
+				aria-label="Pinterest"
+				rel="noopener noreferrer"
+				target="_blank"
+			>
+				<Pinterest />
+			</a>
+		</div>
+	</div>
+</header>

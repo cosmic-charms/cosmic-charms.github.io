@@ -1,4 +1,6 @@
 _site
+dist
+.astro
 assets/css/main.css
 node_modules
 package-lock.json

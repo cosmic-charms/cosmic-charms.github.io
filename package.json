@@ -1,7 +1,7 @@
 {
 	"name": "cosmic-charms.github.io",
 	"version": "1.0.0",
-	"description": "A Jekyll-based website for Cosmic Charms Bakery, featuring a whimsical cosmic theme with purple colors and starry backgrounds.",
+	"description": "Astro website for Cosmic Charms Bakery, featuring a whimsical cosmic theme with purple colors and starry backgrounds.",
 	"homepage": "https://github.com/cosmic-charms/cosmic-charms.github.io#readme",
 	"bugs": {
 		"url": "https://github.com/cosmic-charms/cosmic-charms.github.io/issues"
@@ -12,22 +12,30 @@
 	},
 	"license": "ISC",
 	"author": "Merlin (they)",
-	"type": "commonjs",
-	"main": "index.html",
+	"type": "module",
 	"scripts": {
+		"dev": "astro dev --port 4321",
+		"start": "astro dev --port 4321",
+		"build": "astro build",
+		"preview": "astro preview --port 4321",
+		"check": "astro check",
+		"astro": "astro",
 		"css:build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --minify",
 		"css:watch": "tailwindcss -i ./assets/css/input.css -o ./assets/css/main.css --watch",
 		"jekyll:serve": "bundle exec jekyll serve --livereload --port 4000  --config _config.yml,_config_dev.yml",
 		"jekyll:build": "bundle exec jekyll build",
-		"dev": "concurrently -k -n css,jekyll -c red,blue \"npm run css:watch\" \"npm run jekyll:serve\"",
-		"start": "npm run dev",
-		"build": "npm run css:build && npm run jekyll:build",
+		"jekyll:dev": "concurrently -k -n css,jekyll -c red,blue \"npm run css:watch\" \"npm run jekyll:serve\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint --fix . && prettier --write .",
 		"lint:check": "eslint . && prettier --check .",
 		"prepare": "husky"
 	},
+	"dependencies": {
+		"@tailwindcss/vite": "^4.3.5",
+		"astro": "^7.3.8"
+	},
 	"devDependencies": {
+		"@astrojs/check": "^0.9.12",
 		"@cosmic-charms/infrastructure": "^1.5.1",
 		"@tailwindcss/cli": "^4.3.5",
 		"concurrently": "^9.2.5",
@@ -35,6 +43,7 @@
 		"eslint": "^9.39.4",
 		"husky": "^9.1.7",
 		"prettier": "^3.8.1",
-		"tailwindcss": "^4.3.5"
+		"tailwindcss": "^4.3.5",
+		"typescript": "^6.0.3"
 	}
 }
